@@ -1,0 +1,61 @@
+.base-btn
+{
+    width: 484px;
+    height: 48px;
+    background: #FBCC05 !important;
+    box-shadow: 0px 4px 4px rgba(166, 166, 166, 0.25);
+    border-radius: 24px;
+    color: black;
+}
+
+.logincontainer
+{
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+
+    
+}
+.logo
+{
+    width: 120px;
+    height: 120px;
+    margin-top: 40px;
+    margin-left: 128px;
+    
+}
+.loginbtn
+{
+width: 98px;
+height: 48px;
+border: 2px solid #0A0A0B;
+margin-left: 20px;
+margin-top: 86px;
+margin-right: 25px;
+}
+.grid
+{
+    height: 100%;
+}
+.loginbtn:hover
+{
+    color: white;
+    
+}
+.background
+{
+    background: url(../assets/african-american-business-woman-drinking-coffee-bar\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    
+}
+.alreadyregistered
+{
+    margin-top: 100px;
+}
+body
+{
+    font-family: 'Work Sans';
+}
