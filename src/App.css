@@ -7,7 +7,12 @@
     border-radius: 24px;
     color: black;
 }
-
+@font-face {
+    font-family: 'Worksans';
+    src: url('./fonts/WorkSans-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 .logincontainer
 {
 font-style: normal;
@@ -16,13 +21,27 @@ font-size: 16px;
 
     
 }
+.createactdiv
+{
+    width: 31rem;
+    margin-top: 10.0px;
+}
 .logo
 {
     width: 120px;
     height: 120px;
     margin-top: 40px;
-    margin-left: 128px;
     
+}
+.d-none
+{
+    display: none;
+    margin-top: 5%;
+}
+
+.w-small
+{
+    width: 24rem;
 }
 .loginbtn
 {
@@ -44,7 +63,7 @@ margin-right: 25px;
 }
 .background
 {
-    background: url(../assets/african-american-business-woman-drinking-coffee-bar\ 1.png);
+    background: url(../assets/african-american-business-man\ 1.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -57,5 +76,84 @@ margin-right: 25px;
 }
 body
 {
-    font-family: 'Work Sans';
+    font-family: 'Worksans';
 }
+input
+{
+    border: 1px solid #9A9BA0;
+    color:  #616161 ;
+    max-width: 484px;
+    height: 48px;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.activestepper
+{
+  height: 2px;
+  align-self: center;
+  width: 130px;
+  background-color: #616161;
+}
+
+.inactivestepper
+{
+  height: 2px;
+  align-self: center;
+  width: 100px;
+  background-color: #9A9BA0;
+}
+
+.activestep
+{
+   background-color: #FBCC05;
+   display: flex;
+   border-radius: 50%;
+   height: 2rem;
+   width: 2rem;
+}
+
+.inactivestep
+{
+   background-color: transparent;
+   border: 1px solid #0A0A0B;
+   border-radius: 50%;
+   display: flex;
+   height: 2rem;
+   width: 2rem;
+}
+.checkedimg, .notcheckedimg
+{
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 480px) 
+{
+    .createactdiv
+    {
+        margin-top: 90px !important;
+    }
+    
+}
+
+@media screen and (min-width: 768px) 
+{
+    .createactdiv
+    {
+        width: 34rem !important;
+    }
+    
+}
+@media screen and (max-width: 320px) 
+{
+    .alreadyregistered
+    {
+        display: none;
+    }
+    
+}
+
