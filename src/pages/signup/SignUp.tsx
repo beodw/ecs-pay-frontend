@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import checkedimg from "../../../assets/checked.png";
 import notcheckedimg from "../../../assets/notchecked.png";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function SignUp() {
   const router = useNavigate();
@@ -10,15 +10,9 @@ function SignUp() {
     router("/login");
   };
 
-  const [activeStep, setActiveStep] = useState(0);
-  const [checked, setCheck] = useState(false);
-  const [notchecked, setNotCheck] = useState(true);
-
-  const handleNext = () => {
-    setActiveStep((prevStep) => prevStep + 1);
-    setNotCheck(false);
-    setCheck(true);
-  };
+  const [activeStep, _setActiveStep] = useState(0);
+  const [checked, _setCheck] = useState(false);
+  const [notchecked, _setNotCheck] = useState(true);
 
   // const handlePrevious = () => {
   //   setActiveStep((prevStep) => prevStep - 1);
@@ -99,18 +93,38 @@ function SignUp() {
               </div>
             </div>
             <form>
-              <div style={{ fontSize: "14px", fontWeight: 400, marginLeft:'auto', marginRight: 'auto', maxWidth: '484px' }} >
+              <div
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  maxWidth: "484px",
+                }}
+              >
                 Create your account
               </div>
               <div
-                style={{ marginTop: "12px", fontWeight: 500, fontSize: "24px", marginLeft:'auto', marginRight: 'auto', maxWidth: '484px' }}
+                style={{
+                  marginTop: "12px",
+                  fontWeight: 500,
+                  fontSize: "24px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  maxWidth: "484px",
+                }}
               >
                 Send and Receive Money Internationally from Africa with ECS Pay
               </div>
 
               <div
                 className="mb-4 flex justify-between gap-3"
-                style={{ marginTop: "37px", marginLeft:'auto', marginRight: 'auto', maxWidth: '484px' }}
+                style={{
+                  marginTop: "37px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  maxWidth: "484px",
+                }}
               >
                 <input
                   className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
@@ -143,7 +157,14 @@ function SignUp() {
                 />
               </div>
 
-              <div className="mb-3 flex justify-between gap-3" style={{marginLeft:'auto', marginRight: 'auto', maxWidth: '484px'}}>
+              <div
+                className="mb-3 flex justify-between gap-3"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  maxWidth: "484px",
+                }}
+              >
                 <input
                   className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
@@ -161,7 +182,14 @@ function SignUp() {
                 </button>
               </div>
 
-              <div className="flex items-center mb-3" style={{marginLeft:'auto', marginRight: 'auto', maxWidth: '484px'}}>
+              <div
+                className="flex items-center mb-3"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  maxWidth: "484px",
+                }}
+              >
                 <input
                   id="myCheckbox"
                   type="checkbox"
