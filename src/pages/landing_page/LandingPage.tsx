@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import featurerow1 from "../../../assets/featurerow1.png";
 import featurerow2 from "../../../assets/featurerow2.png";
 import trpartners from "../../../assets/trpartners.png";
+import herooimage from "../../../assets/Table.png";
 import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
@@ -124,10 +125,10 @@ icon */}
 
       {/* secondsection */}
       <div className="text-center"
-      style={{marginTop:'292px'}}>
+      style={{marginTop:'202px'}}>
 
-        <div className="header mb-6" style={{fontWeight: 'bold',
-fontSize: '32px'}}>
+        <div className="header mb-6 mx-auto" style={{fontWeight: 'bold',
+fontSize: '32px', maxWidth:'907px'}}>
         ECS Pay the simplest and fastest way to send and receive money from Africa to the World
         </div>
 
@@ -181,14 +182,103 @@ fontSize: '32px'}}>
       </div>
 
       {/* fourthsection */}
-      <div>
-
+      <div className="websitecard min-h-[450px]" style={{marginTop:'112px'}}>
       </div>
 
       {/* fifthsection */}
-      <div>
+      <div style={{marginTop:'96px'}}>
+        <div className="header text-center">
+          Contact Us
+        </div>
+      <div className="grid  md:grid-cols-2">
+        <div>
+        <img className="max-w-full h-auto mx-auto" src={herooimage} />
+        </div>
 
+        <div>
+        <div className="header mb-4 text-center" style={{marginTop:'56px'}}>
+        Contact our support team
+        </div>
+
+        <div className="sectiontitle text-justify mx-auto mb-10" style={{width:'469px'}}>
+        Our sales team always active to support you. Any kind of questions about to our product they can answer to you.
+        </div>
+
+        <form style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  maxWidth: "485px",
+                }}>
+        <div
+                className="mb-4 flex justify-between gap-3"
+              >
+                <input
+                  className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                  id="name"
+                  type="text"
+                  placeholder="First Name"
+                />
+                <input
+                  className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  id="text"
+                  type="text"
+                  placeholder="Last Name"
+                />
+              </div>
+
+              <div
+                className="mb-4 flex justify-between gap-3"
+              >
+                <input
+                  className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                  id="name"
+                  type="email"
+                  placeholder="Email Address"
+                />
+                <input
+                  className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  id="email"
+                  type="text"
+                  placeholder="Phone"
+                />
+              </div>
+         
+              <textarea
+                  className=" appearance-none mb-5 border w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder="Your Text"
+                />
+
+                <div
+                className="flex items-center mb-5"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                <input
+                  id="myCheckbox"
+                  type="checkbox"
+                  className="h-5 w-5 rounded"
+                />
+                <label
+                  htmlFor="myCheckbox"
+                  className="ml-2"
+                  style={{ fontSize: "12px" }}
+                >
+                  I agree that ECS PAY may contact me at the email address or phone number above.
+                </label>
+              </div>
+
+              <button className="base-btn" type="button">
+                  Submit
+                </button>
+
+        </form>
+        </div>
+      
       </div>
+      </div>
+      
 
       {/* sixthsection */}
       <div>

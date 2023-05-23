@@ -11,13 +11,6 @@
   color: white;
 }
 
-.sectiontitle
-{
-    color: #6C6C6C;
-    font-size: 20px;
-    font-weight: bold;
-}
-
 .converterexchanger {
   border: 1px solid #9a9ba0;
 
@@ -52,7 +45,12 @@ a:hover {
 }
 
 .base-btn:hover {
-  background-color: #0a0a0b !important;
+  background-color: #31240B !important;
+}
+.header
+{
+    font-weight: bold;
+    font-size: 32px;
 }
 @font-face {
   font-family: "Worksans";
@@ -103,6 +101,15 @@ a:hover {
   height: 100%;
   width: 100%;
 }
+
+.websitecard
+{
+  background: url(../assets/websitecard.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
 .alreadyregistered {
   margin-top: 100px;
 }
@@ -117,6 +124,13 @@ input {
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+textarea
+{
+  border: 1px solid #9a9ba0;
+  color: #616161;
+  height:11.5rem; 
+  border-radius:24px
 }
 
 .activestepper {
