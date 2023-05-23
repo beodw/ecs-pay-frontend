@@ -280,8 +280,16 @@ fontSize: '32px'}}>
       </div>
       
 
-      {/* sixthsection */}
-      <div>
+{/* sixthsection */}
+      <div className="slider">
+
+      </div>
+
+      {/* seventhsection */}
+      <div className="faq" style={{marginTop:'144px'}}>
+        <div className="header">
+        Frequently asked questions
+        </div>
 
       </div>
       <Footer />
