@@ -287,7 +287,7 @@ fontSize: '32px'}}>
 
       {/* seventhsection */}
       <div className="faq" style={{marginTop:'144px'}}>
-        <div className="header">
+        <div className="header text-center">
         Frequently asked questions
         </div>
 
