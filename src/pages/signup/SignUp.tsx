@@ -27,7 +27,7 @@ function SignUp() {
             <img
               src="../../../assets/Mask group.png"
               alt="Your Image"
-              className="object-contain logo lg:ml-40"
+              className="max-w-full h-auto logo lg:ml-40"
             />
 
             <div className="logincontainer flex">
@@ -177,7 +177,7 @@ function SignUp() {
                 />
               </div>
               <div className="flex items-center justify-center mb-4">
-                <button className="base-btn hover:text-white" type="button">
+                <button className="base-btn" type="button">
                   Next
                 </button>
               </div>
