@@ -14,8 +14,6 @@
   box-shadow: 2px 15px 30px rgba(166, 166, 166, 0.15);
   border-radius: 24px;
   margin-left: 44px;
-  max-width: 32.75rem;
-  height: 29.25rem;
   margin-top: 122.5px;
   padding-top: 40px;
 }
@@ -177,6 +175,16 @@ textarea
 @media screen and (max-width: 480px) {
   .createactdiv {
     margin-top: 90px !important;
+  }
+
+  h1
+  {
+    font-size: 28px !important;
+  }
+
+  .header
+  {
+    font-size: 28px;
   }
 }
 
