@@ -19,10 +19,10 @@ function LandingPage() {
       {/* first section */}
       <div className="grid md:grid-cols-2">
         <div className="md:ml-[125px]" style={{ marginTop: "9.031rem"}}>
-          <h1 className="text-center md:text-justify"  style={{ fontWeight: 'bold', fontSize: "48px" }}>
+          <h1 style={{ fontWeight: 'bold', fontSize: "48px" }}>
             Send and Receive Money abroad hassle free with ECS Pay
           </h1>
-          <h1 className=" text-center md:text-justify text-gray-500" style={{ fontWeight:'bold', color:'', fontSize:'24px', marginTop:'1.75rem' }}>
+          <h1 className=" text-gray-500" style={{ fontWeight:'bold', color:'', fontSize:'24px', marginTop:'1.75rem' }}>
             The trusted and affordable way to make international transfers from
             Africa
           </h1>
