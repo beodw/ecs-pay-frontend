@@ -14,7 +14,7 @@ function Form3({ onChildEvent }: ChildProps) {
       <form>
 
         
-        <div className="mb-4">
+        <div className="mt-4 mb-4">
           <input
             className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
             id="password"

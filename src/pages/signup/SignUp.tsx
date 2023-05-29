@@ -15,6 +15,7 @@ function SignUp() {
 
   // Implementation for stepper
   const [activeStep, setActiveStep] = useState(1);
+  const [activeComponent, setComponent] = useState(0);
   const [checked1, setCheck1] = useState(false);
   const [notchecked1, setNotCheck1] = useState(true);
   const [checked2, setCheck2] = useState(false);
@@ -26,7 +27,7 @@ function SignUp() {
 
   const handleNext = () => {
     setActiveStep((prevStep) => prevStep + 1);
-
+    setComponent((prevStep) => prevStep + 1);
     
 
     if (activeStep == 1) {
@@ -55,7 +56,7 @@ const components = [
   <Form1 onChildEvent={handleNext} />,
   <Form2 onChildEvent={handleNext} />,
   <Form3 onChildEvent={handleNext} />,
-  <Form4 onChildEvent={handleNext} />,
+  <Form4 />,
   
 ];
 
@@ -85,11 +86,13 @@ const components = [
           </div>
 
           <div className="mx-auto mb-3 w-64 createactdiv ">
-            {/* Stepper  */}
+            
             {/* Stepper for mobile screen */}
             <div className="mb-4 pt-[4px] inactivestep md:hidden text-center justify-center">
                 {activeStep}
               </div>
+
+            {/* Stepper for medium screens  */}
             <div className="hidden justify-center mb-8 md:flex">
               <div className={activeStep > 1 ? "activestep" : "inactivestep"}>
                 {notchecked1 && (
@@ -163,7 +166,7 @@ const components = [
         >
           Send and Receive Money Internationally from Africa with ECS Pay
         </div>
-            {components[activeStep]}
+            {components[activeComponent]}
 
             <main></main>
           </div>

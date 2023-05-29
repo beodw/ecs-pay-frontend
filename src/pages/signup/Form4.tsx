@@ -1,104 +1,81 @@
+import { useNavigate } from "react-router-dom";
+import React, { useState, useRef } from "react";
 
-interface ChildProps {
-  onChildEvent: () => void;
-}
 
-function Form4({ onChildEvent }: ChildProps) {
+function Form4() {
+    const [otp, setOTP] = useState<string[]>(Array(5).fill(""));
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  const handleNext = () => {
-    onChildEvent();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+    const value = e.target.value;
+
+    if (!isNaN(Number(value))) {
+      setOTP((prevOTP) => {
+        const newOTP = [...prevOTP];
+        newOTP[index] = value;
+        return newOTP;
+      });
+
+      // Move focus to the next input field
+      if (value !== "" && index < otp.length - 1) {
+        inputRefs.current[index + 1]?.focus();
+      }
+    }
   };
 
+  const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const pasteData = e.clipboardData.getData("text/plain");
+
+    if (/^\d+$/.test(pasteData)) {
+      setOTP((prevOTP) => {
+        const newOTP = [...prevOTP];
+        for (let i = 0; i < newOTP.length; i++) {
+          if (pasteData[i]) {
+            newOTP[i] = pasteData[i];
+          }
+        }
+        return newOTP;
+      });
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
+    if (e.key === "Backspace" && otp[index] === "" && index > 0) {
+      inputRefs.current[index - 1]?.focus();
+    }
+  };
+
+    const router = useNavigate();
+
+    const handleVerification = () => {
+      router("/login");
+    };
+
   return (
-    <div>
-      <form>
-        <div
-          className="mb-4 flex justify-between gap-3"
-          style={{
-            marginTop: "37px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "484px",
-          }}
-        >
+    <div className="text-center">
+        <div className="mt-[44px] mb-3" style={{fontWeight:'bold', fontSize:'32px'}}>
+            Account Authentication
+        </div>
+
+    <div className="text-gray-500 mb-3" style={{fontWeight:'bold'}}>
+    Kindly enter the One Time Password (OTP) that was sent to the phone number or email address used for registration
+    </div>
+    <div className="gap-[12px] mt-[44px] flex">
+        {otp.map((digit, index) => (
           <input
-            className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
+            key={index}
+            ref={(ref) => (inputRefs.current[index] = ref)}
             type="text"
-            placeholder="First Name"
+            className="border border-gray-300 rounded-full px-4 py-2 text-center w-[95px] h-[95px]"
+            maxLength={1}
+            value={digit}
+            onChange={(e) => handleChange(e, index)}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            onPaste={handlePaste}
           />
-          <input
-            className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="text"
-            placeholder="Last Name"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="text"
-            placeholder="Username"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="text"
-            placeholder="Email Address"
-          />
-        </div>
-        <div
-          className="mb-3 flex justify-between gap-3"
-          style={{
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "484px",
-          }}
-        >
-          <input
-            className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="text"
-          />
-          <input
-            className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="text"
-          />
-        </div>
-        <div className="flex items-center justify-center mb-4">
-          <button className="base-btn" type="button" onClick={handleNext}>
-            Sign Up
-          </button>
-        </div>
-        <div
-          className="flex items-center mb-3"
-          style={{
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "484px",
-          }}
-        >
-          <input id="myCheckbox" type="checkbox" className="h-5 w-5 rounded" />
-          <label
-            htmlFor="myCheckbox"
-            className="ml-2"
-            style={{ fontSize: "12px" }}
-          >
-            By creating an account, I acknowledge that I have read and accept
-            the terms and conditions of ECS Pay
-          </label>
-        </div>
-        <div
-          className="text-center"
-          style={{ color: "#FBCC05", fontSize: "12px" }}
-        >
-          Terms of Service
-        </div>
-      </form>
+        ))}
+      </div>
     </div>
   );
 }
