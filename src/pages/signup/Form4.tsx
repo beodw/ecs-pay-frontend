@@ -67,8 +67,9 @@ function Form4() {
             key={index}
             ref={(ref) => (inputRefs.current[index] = ref)}
             type="text"
-            className="border border-gray-300 rounded-full px-4 py-2 text-center w-10 h-10 md:w-[95px] md:h-[95px]"
+            className="border rounded-full px-4 py-2 text-center w-10 h-10 md:w-[95px] md:h-[95px]"
             maxLength={1}
+            style={{border:'1px solid #9A9BA0'}}
             value={digit}
             onChange={(e) => handleChange(e, index)}
             onKeyDown={(e) => handleKeyDown(e, index)}
