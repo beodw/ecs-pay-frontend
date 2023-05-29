@@ -1,7 +1,8 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Login } from "./pages/login";
-import { SignUp } from "./pages/signup";
+import { SignUp, Form1, Form2, Form3, Form4 } from "./pages/signup";
+
 import { LandingPage} from "./pages/landing_page";
 import { useSelector } from "react-redux";
 import { appState } from "./types/appState";
@@ -17,7 +18,7 @@ const App = () => {
         
           <Route path="*" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signup/*" element={<SignUp />} />
         </>
       ) : (
         <Route path="*" element={<div>App Layout</div>} />

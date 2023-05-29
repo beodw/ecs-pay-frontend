@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import checkedimg from "../../../assets/checked.png";
 import notcheckedimg from "../../../assets/notchecked.png";
+import { Form1, Form2, Form3, Form4 } from ".";
 import { useState } from "react";
 
 function SignUp() {
@@ -10,14 +11,53 @@ function SignUp() {
     router("/login");
   };
 
-  const [activeStep, _setActiveStep] = useState(0);
-  const [checked, _setCheck] = useState(false);
-  const [notchecked, _setNotCheck] = useState(true);
+ 
 
-  // const handlePrevious = () => {
-  //   setActiveStep((prevStep) => prevStep - 1);
+  // Implementation for stepper
+  const [activeStep, setActiveStep] = useState(1);
+  const [checked1, setCheck1] = useState(false);
+  const [notchecked1, setNotCheck1] = useState(true);
+  const [checked2, setCheck2] = useState(false);
+  const [notchecked2, setNotCheck2] = useState(true);
+  const [checked3, setCheck3] = useState(false);
+  const [notchecked3, setNotCheck3] = useState(true);
+  const [checked4, setCheck4] = useState(false);
+  const [notchecked4, setNotCheck4] = useState(true);
 
-  // };
+  const handleNext = () => {
+    setActiveStep((prevStep) => prevStep + 1);
+
+    
+
+    if (activeStep == 1) {
+      setCheck1(true);
+      setNotCheck1(false);
+    }
+
+    if (activeStep == 2) {
+      setCheck2(true);
+      setNotCheck2(false);
+    }
+
+    if (activeStep == 3) {
+      setCheck3(true);
+      setNotCheck3(false);
+    }
+
+    if (activeStep == 4) {
+      setCheck4(true);
+      setNotCheck4(false);
+    }
+  };
+
+   // Component Array
+const components = [
+  <Form1 onChildEvent={handleNext} />,
+  <Form2 onChildEvent={handleNext} />,
+  <Form3 onChildEvent={handleNext} />,
+  <Form4 onChildEvent={handleNext} />,
+  
+];
 
   return (
     <div>
@@ -46,172 +86,86 @@ function SignUp() {
 
           <div className="mx-auto mb-3 w-64 createactdiv ">
             {/* Stepper  */}
-            <div className="flex justify-center mb-8">
-              <div className={activeStep >= 0 ? "activestep" : "inactivestep"}>
-                {checked && (
+            {/* Stepper for mobile screen */}
+            <div className="mb-4 pt-[4px] inactivestep md:hidden text-center justify-center">
+                {activeStep}
+              </div>
+            <div className="hidden justify-center mb-8 md:flex">
+              <div className={activeStep > 1 ? "activestep" : "inactivestep"}>
+                {notchecked1 && (
+                  <img
+                    src={notcheckedimg}
+                    alt="My Image"
+                    className="checkedimg"
+                  />
+                )}
+                {checked1 && (
                   <img src={checkedimg} alt="My Image" className="checkedimg" />
                 )}
               </div>
 
               {/* horizontal line */}
               <div
-                className={
-                  activeStep >= 1 ? "activestepper" : "inactivestepper"
-                }
+                className={activeStep >= 2 ? "activeline1" : "inactivestepper"}
               ></div>
-              <div className={activeStep >= 1 ? "activestep" : "inactivestep"}>
-                {checked && <img src={checkedimg} className="checkedimg" />}
-                {notchecked && (
+              <div className={activeStep >= 3 ? "activestep1" : "inactivestep"}>
+                {checked2 && <img src={checkedimg} className="checkedimg" />}
+                {notchecked2 && (
                   <img src={notcheckedimg} className="notcheckedimg" />
                 )}
               </div>
               {/* horizontal line */}
               <div
-                className={
-                  activeStep >= 1 ? "activestepper" : "inactivestepper"
-                }
+                className={activeStep >= 3 ? "activeline2" : "inactivestepper"}
               ></div>
 
-              <div className={activeStep >= 2 ? "activestep" : "inactivestep"}>
-                {checked && <img src={checkedimg} className="checkedimg" />}
-                {notchecked && (
+              <div className={activeStep >= 4 ? "activestep2" : "inactivestep"}>
+                {checked3 && <img src={checkedimg} className="checkedimg" />}
+                {notchecked3 && (
                   <img src={notcheckedimg} className="notcheckedimg" />
                 )}
               </div>
 
               <div
-                className={
-                  activeStep >= 1 ? "activestepper" : "inactivestepper"
-                }
+                className={activeStep >= 4 ? "activeline3" : "inactivestepper"}
               ></div>
 
-              <div className={activeStep >= 2 ? "activestep" : "inactivestep"}>
-                {checked && <img src={checkedimg} className="checkedimg" />}
-                {notchecked && (
+              <div className={activeStep >= 5 ? "activestep3" : "inactivestep"}>
+                {checked4 && <img src={checkedimg} className="checkedimg" />}
+                {notchecked4 && (
                   <img src={notcheckedimg} className="notcheckedimg" />
                 )}
               </div>
             </div>
-            <form>
-              <div
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 400,
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  maxWidth: "484px",
-                }}
-              >
-                Create your account
-              </div>
-              <div
-                style={{
-                  marginTop: "12px",
-                  fontWeight: 500,
-                  fontSize: "24px",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  maxWidth: "484px",
-                }}
-              >
-                Send and Receive Money Internationally from Africa with ECS Pay
-              </div>
 
-              <div
-                className="mb-4 flex justify-between gap-3"
-                style={{
-                  marginTop: "37px",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  maxWidth: "484px",
-                }}
-              >
-                <input
-                  className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                  id="name"
-                  type="text"
-                  placeholder="First Name"
-                />
-                <input
-                  className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="text"
-                  placeholder="Last Name"
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="text"
-                  placeholder="Username"
-                />
-              </div>
+            {/* Render Forms */}
+             
+            <div
+          style={{
+            fontSize: "14px",
+            fontWeight: 400,
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "484px",
+          }}
+        >
+          Create your account
+        </div>
+        <div
+          style={{
+            marginTop: "12px",
+            fontWeight: 500,
+            fontSize: "24px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "484px",
+          }}
+        >
+          Send and Receive Money Internationally from Africa with ECS Pay
+        </div>
+            {components[activeStep]}
 
-              <div className="mb-4">
-                <input
-                  className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="text"
-                  placeholder="Email Address"
-                />
-              </div>
-
-              <div
-                className="mb-3 flex justify-between gap-3"
-                style={{
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  maxWidth: "484px",
-                }}
-              >
-                <input
-                  className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="text"
-                />
-                <input
-                  className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="text"
-                />
-              </div>
-              <div className="flex items-center justify-center mb-4">
-                <button className="base-btn" type="button">
-                  Next
-                </button>
-              </div>
-
-              <div
-                className="flex items-center mb-3"
-                style={{
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  maxWidth: "484px",
-                }}
-              >
-                <input
-                  id="myCheckbox"
-                  type="checkbox"
-                  className="h-5 w-5 rounded"
-                />
-                <label
-                  htmlFor="myCheckbox"
-                  className="ml-2"
-                  style={{ fontSize: "12px" }}
-                >
-                  By creating an account, I acknowledge that I have read and
-                  accept the terms and conditions of ECS Pay
-                </label>
-              </div>
-
-              <div
-                className="text-center"
-                style={{ color: "#FBCC05", fontSize: "12px" }}
-              >
-                Terms of Service
-              </div>
-            </form>
+            <main></main>
           </div>
         </div>
         <div className="background col-span-1 "></div>
