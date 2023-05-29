@@ -51,7 +51,7 @@ function LandingPage() {
         You are sending
        </span>
 
-       <select style={{ height:'3.75rem', borderColor:'black', color:'black'}} className=" w-[15rem] md:w-[30rem] currencyinput mt-4 mx-auto block w-full px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
+       <select style={{ height:'3.75rem', borderColor:'black', color:'black'}} className=" w-[15rem] md:w-[30rem] currencyinput mt-4 mx-auto block px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
   <option value="option1">Option 1</option>
   <option value="option2">Option 2</option>
   <option value="option3">Option 3</option>
@@ -104,7 +104,7 @@ icon */}
         Estimated Amount to Receiver
        </span>
 
-       <select style={{ height:'3.75rem', borderColor:'black', color:'black'}} className="w-[15rem] md:w-[30rem] currencyinput mt-4 mx-auto block w-full px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
+       <select style={{ height:'3.75rem', borderColor:'black', color:'black'}} className="w-[15rem] md:w-[30rem] currencyinput mt-4 mx-auto block px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
   <option value="option1">Option 1</option>
   <option value="option2">Option 2</option>
   <option value="option3">Option 3</option>
