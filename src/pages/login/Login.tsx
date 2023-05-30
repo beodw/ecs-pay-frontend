@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
+  const router = useNavigate();
+
+  const handleSignup = () => {
+    router("/signup");
+  };
   return <div>
   <div className="grid md:grid-cols-4">
     <div className="col-span-3">
@@ -18,6 +23,7 @@ function Login() {
 
           <button
             className="rounded-full loginbtn hover:bg-black"
+            onClick={handleSignup}
             
           >
             SignUp

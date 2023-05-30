@@ -18,40 +18,40 @@ function LandingPage() {
 
       {/* first section */}
       <div className="grid md:grid-cols-2">
-        <div style={{ marginTop: "9.031rem", marginLeft:'125px' }}>
+        <div className="md:ml-[125px]" style={{ marginTop: "9.031rem"}}>
           <h1 style={{ fontWeight: 'bold', fontSize: "48px" }}>
             Send and Receive Money abroad hassle free with ECS Pay
           </h1>
-          <h1 className="text-gray-500" style={{ fontWeight:'bold', color:'', fontSize:'24px', marginTop:'1.75rem' }}>
+          <h1 className=" text-gray-500" style={{ fontWeight:'bold', color:'', fontSize:'24px', marginTop:'1.75rem' }}>
             The trusted and affordable way to make international transfers from
             Africa
           </h1>
 
-          <div className="flex mt-11">
+          <div className=" md:flex mt-11 text-center">
             <input
-              className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+              className=" w-[17rem] mb-3 md:mb-0 appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline md:w-[24.188rem]"
               id="email"
               type="text"
               placeholder="Enter Email Here"
-              style={{maxWidth:'24.188rem', height:'3rem', boxShadow:'0px 4px 4px rgba(166, 166, 166, 0.25)'}}
+              style={{ height:'3rem', boxShadow:'0px 4px 4px rgba(166, 166, 166, 0.25)'}}
             />
 
             <button
-              className="rounded-full base-btn hover:bg-black"
-              style={{ maxWidth: "11.563rem", height: "3.125rem", marginLeft:'7px' }}
+              className="rounded-full base-btn hover:bg-black w-[15rem]  md:w-[11.563rem]"
+              style={{ height: "3.125rem", marginLeft:'7px' }}
               onClick={handleSignup}
             >
               Get Started
             </button>
           </div>
         </div>
-        <div className="text-gray-500 converterexchanger">
+        <div className="text-gray-500 converterexchanger w-[20rem] h-[33.25rem] md:w-[32.75rem] md:h-[29.25rem]">
         <div>
         <span className="ml-7">
         You are sending
        </span>
-       
-       <select style={{maxWidth:'30rem', height:'3.75rem', borderColor:'black', color:'black'}} className="currencyinput mt-4 mx-auto block w-full px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
+
+       <select style={{ height:'3.75rem', borderColor:'black', color:'black'}} className=" w-[15rem] md:w-[30rem] currencyinput mt-4 mx-auto block px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
   <option value="option1">Option 1</option>
   <option value="option2">Option 2</option>
   <option value="option3">Option 3</option>
@@ -64,7 +64,7 @@ function LandingPage() {
         Exchange Rate
        </span>
 
-       <span style={{marginLeft:'182px'}}>
+       <span className="ml-[46px] md:ml[182px]">
         1 USD
        </span>
 {/* 
@@ -73,7 +73,7 @@ icon */}
 
        </span>
 
-       <span style={{marginRight:'41.5px'}}>
+       <span className=" mr-0 md:mr-[41.5px]">
         725 NGN
        </span>
 
@@ -84,7 +84,7 @@ icon */}
         Transfer Fee
        </span>
 
-       <span style={{marginRight:'155.5px'}}>
+       <span className="mr-[86px] md:mr-[155.5px]">
        2.5%
        </span>
         </div>
@@ -94,7 +94,7 @@ icon */}
         Transaction Time
        </span>
 
-       <span style={{marginRight:'73.5px'}}>
+       <span className="mr-[7px] md:mr-[73.5px]">
        24 to 48 Hours
        </span>
         </div>
@@ -104,7 +104,7 @@ icon */}
         Estimated Amount to Receiver
        </span>
 
-       <select style={{maxWidth:'30rem', height:'3.75rem', borderColor:'black', color:'black'}} className="currencyinput mt-4 mx-auto block w-full px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
+       <select style={{ height:'3.75rem', borderColor:'black', color:'black'}} className="w-[15rem] md:w-[30rem] currencyinput mt-4 mx-auto block px-4 py-2 pr-8 leading-tight border rounded-full appearance-none focus:outline-none focus:border-gray-500">
   <option value="option1">Option 1</option>
   <option value="option2">Option 2</option>
   <option value="option3">Option 3</option>
@@ -113,8 +113,8 @@ icon */}
 
         <div className="text-center">
         <button
-              className="rounded-full base-btn hover:bg-black"
-              style={{ maxWidth: "30.25rem", height: "3rem"}}
+              className="rounded-full base-btn hover:bg-black w-[15rem] md:w-[30.25rem]"
+              style={{height: "3rem"}}
               
             >
               Proceed
@@ -147,18 +147,18 @@ fontSize: '32px', maxWidth:'907px'}}>
 
         </div>
 
-        <div className="exchange justify-between flex mx-auto gap-12" style={{width:'fit-content'}}>
+        <div className="exchange justify-between md:flex mx-auto gap-12" style={{width:'fit-content'}}>
         <button
-              className="rounded-full base-btn hover:bg-black"
-              style={{ maxWidth: "16.875rem", height: "3rem"}}
+              className="rounded-full base-btn hover:bg-black w-[15rem] mb-3 md:w-[16.875rem] md:mb-0"
+              style={{ height: "3rem"}}
               
             >
               Receive Money
             </button>
 
             <button
-              className="rounded-full base-btn hover:bg-black"
-              style={{ maxWidth: "16.875rem", height: "3.125rem"}}
+              className="rounded-full base-btn hover:bg-black w-[15rem] md:w-[16.875rem]"
+              style={{ height: "3rem"}}
               
             >
               Send Money
@@ -192,7 +192,7 @@ fontSize: '32px'}}>
         </div>
       <div className="grid  md:grid-cols-2">
         <div>
-        <img className="max-w-full h-auto mx-auto" src={herooimage} />
+        <img className=" w-[60%] md:max-w-full h-auto mx-auto" src={herooimage} />
         </div>
 
         <div>
@@ -200,15 +200,11 @@ fontSize: '32px'}}>
         Contact our support team
         </div>
 
-        <div className="sectiontitle text-justify mx-auto mb-10" style={{width:'469px'}}>
+        <div className="sectiontitle text-center md:text-justify mx-auto mb-10 md:w-[469px]">
         Our sales team always active to support you. Any kind of questions about to our product they can answer to you.
         </div>
 
-        <form style={{
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  maxWidth: "485px",
-                }}>
+        <form className="w-[380px] md:w-[485px] mx-auto">
         <div
                 className="mb-4 flex justify-between gap-3"
               >
@@ -269,9 +265,12 @@ fontSize: '32px'}}>
                 </label>
               </div>
 
-              <button className="base-btn" type="button">
+<div className="text-center">
+<button className="base-btn  w-[15rem] md:w-[30.25rem]" type="button">
                   Submit
                 </button>
+</div>
+              
 
         </form>
         </div>

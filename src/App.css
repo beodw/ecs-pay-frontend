@@ -6,10 +6,7 @@
   border-radius: 24px;
   color: black;
 }
-.base-btn:hover {
-  background-color: #0a0a0b;
-  color: white;
-}
+
 
 .converterexchanger {
   border: 1px solid #9a9ba0;
@@ -17,8 +14,6 @@
   box-shadow: 2px 15px 30px rgba(166, 166, 166, 0.15);
   border-radius: 24px;
   margin-left: 44px;
-  max-width: 32.75rem;
-  height: 29.25rem;
   margin-top: 122.5px;
   padding-top: 40px;
 }
@@ -46,6 +41,7 @@ a:hover {
 
 .base-btn:hover {
   background-color: #31240B !important;
+  color: white;
 }
 .header
 {
@@ -87,6 +83,11 @@ a:hover {
   margin-left: 20px;
   margin-top: 86px;
   margin-right: 25px;
+}
+.loginbtn:hover
+{
+  background-color: #31240B;
+  color: white;
 }
 .grid {
   height: 100%;
@@ -133,11 +134,11 @@ textarea
   border-radius:24px
 }
 
-.activestepper {
+.activeline1, .activeline2, .activeline3 {
   height: 2px;
   align-self: center;
   width: 130px;
-  background-color: #616161;
+  background-color: #FBCC05;
 }
 
 .inactivestepper {
@@ -147,7 +148,7 @@ textarea
   background-color: #9a9ba0;
 }
 
-.activestep {
+.activestep, .activestep1, .activestep2, .activestep3{
   background-color: #fbcc05;
   display: flex;
   border-radius: 50%;
@@ -174,6 +175,17 @@ textarea
 @media screen and (max-width: 480px) {
   .createactdiv {
     margin-top: 90px !important;
+  }
+
+  h1
+  {
+    font-size: 28px !important;
+    text-align: center;
+  }
+
+  .header
+  {
+    font-size: 28px;
   }
 }
 
