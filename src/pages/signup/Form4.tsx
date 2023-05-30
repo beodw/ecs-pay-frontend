@@ -46,11 +46,11 @@ function Form4() {
     }
   };
 
-    const router = useNavigate();
+    // const router = useNavigate();
 
-    const handleVerification = () => {
-      router("/login");
-    };
+    // const handleVerification = () => {
+    //   router("/login");
+    // };
 
   return (
     <div className="text-center">
