@@ -4,7 +4,9 @@ import featurerow1 from "../../../assets/featurerow1.png";
 import featurerow2 from "../../../assets/featurerow2.png";
 import trpartners from "../../../assets/trpartners.png";
 import herooimage from "../../../assets/Table.png";
+import websitecard from "../../../assets/websitecard.png";
 import { useNavigate } from "react-router-dom";
+import Carousel from "./Carousel";
 
 function LandingPage() {
   const router = useNavigate();
@@ -170,7 +172,7 @@ fontSize: '32px', maxWidth:'907px'}}>
 
       {/* thirdsection */}
 
-      <div className="text-center" style={{marginTop:'156px'}}>
+      <div className="text-center trustedpartners h-[auto] pt-[24px] bg-[#FBCC0580]" style={{marginTop:'156px'}}>
       <div className="header mb-16" style={{fontWeight: 'bold',
 fontSize: '32px'}}>
         Our Trusted Partners
@@ -179,10 +181,7 @@ fontSize: '32px'}}>
         <div className="trustedpartners">
         <img className="max-w-full h-auto mx-auto" src={trpartners} />
         </div>
-      </div>
-
-      {/* fourthsection */}
-      <div className="websitecard min-h-[450px]" style={{marginTop:'112px'}}>
+        <img className="max-w-full h-auto block mx-auto" src={websitecard} />
       </div>
 
       {/* fifthsection */}
@@ -287,9 +286,21 @@ fontSize: '32px'}}>
       {/* seventhsection */}
       <div className="faq" style={{marginTop:'144px'}}>
         <div className="header text-center">
+        What Our Users are Saying
+        </div>
+      
+      <div className="mt-[52px] px-[1rem]">
+      <Carousel></Carousel>
+      </div>
+        
+
+      </div>
+
+      {/* eightsection */}
+      <div className="mt-[96px]">
+      <div className="header text-center">
         Frequently asked questions
         </div>
-
       </div>
       <Footer />
     </div>
