@@ -11,8 +11,6 @@ function SignUp() {
     router("/login");
   };
 
- 
-
   // Implementation for stepper
   const [activeStep, setActiveStep] = useState(1);
   const [activeComponent, setComponent] = useState(0);
@@ -28,7 +26,6 @@ function SignUp() {
   const handleNext = () => {
     setActiveStep((prevStep) => prevStep + 1);
     setComponent((prevStep) => prevStep + 1);
-    
 
     if (activeStep == 1) {
       setCheck1(true);
@@ -51,14 +48,13 @@ function SignUp() {
     }
   };
 
-   // Component Array
-const components = [
-  <Form1 onChildEvent={handleNext} />,
-  <Form2 onChildEvent={handleNext} />,
-  <Form3 onChildEvent={handleNext} />,
-  <Form4 />,
-  
-];
+  // Component Array
+  const components = [
+    <Form1 onChildEvent={handleNext} />,
+    <Form2 onChildEvent={handleNext} />,
+    <Form3 onChildEvent={handleNext} />,
+    <Form4 />,
+  ];
 
   return (
     <div>
@@ -86,11 +82,10 @@ const components = [
           </div>
 
           <div className="mx-auto mb-3 w-64 createactdiv ">
-            
             {/* Stepper for mobile screen */}
             <div className="mb-4 pt-[4px] inactivestep md:hidden text-center justify-center">
-                {activeStep}
-              </div>
+              {activeStep}
+            </div>
 
             {/* Stepper for medium screens  */}
             <div className="hidden justify-center mb-8 md:flex">
@@ -142,30 +137,30 @@ const components = [
             </div>
 
             {/* Render Forms */}
-             
+
             <div
-          style={{
-            fontSize: "14px",
-            fontWeight: 400,
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "484px",
-          }}
-        >
-          Create your account
-        </div>
-        <div
-          style={{
-            marginTop: "12px",
-            fontWeight: 500,
-            fontSize: "24px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "484px",
-          }}
-        >
-          Send and Receive Money Internationally from Africa with ECS Pay
-        </div>
+              style={{
+                fontSize: "14px",
+                fontWeight: 400,
+                marginLeft: "auto",
+                marginRight: "auto",
+                maxWidth: "484px",
+              }}
+            >
+              Create your account
+            </div>
+            <div
+              style={{
+                marginTop: "12px",
+                fontWeight: 500,
+                fontSize: "24px",
+                marginLeft: "auto",
+                marginRight: "auto",
+                maxWidth: "484px",
+              }}
+            >
+              Send and Receive Money Internationally from Africa with ECS Pay
+            </div>
             {components[activeComponent]}
 
             <main></main>

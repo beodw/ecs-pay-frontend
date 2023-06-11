@@ -53,32 +53,6 @@ function Form2({ onChildEvent }: ChildProps) {
             Next
           </button>
         </div>
-
-        <div
-          className="flex items-center mb-3"
-          style={{
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "484px",
-          }}
-        >
-          <input id="myCheckbox" type="checkbox" className="h-5 w-5 rounded" />
-          <label
-            htmlFor="myCheckbox"
-            className="ml-2"
-            style={{ fontSize: "12px" }}
-          >
-            By creating an account, I acknowledge that I have read and accept
-            the terms and conditions of ECS Pay
-          </label>
-        </div>
-
-        <div
-          className="text-center"
-          style={{ color: "#FBCC05", fontSize: "12px" }}
-        >
-          Terms of Service
-        </div>
       </form>
     </div>
   );

@@ -34,7 +34,7 @@ function Form3({ onChildEvent }: ChildProps) {
 
         <div className="flex items-center justify-center mb-4">
           <button className="base-btn" type="button" onClick={handleNext}>
-            Next
+            Sign Up
           </button>
         </div>
 

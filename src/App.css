@@ -72,6 +72,16 @@ a:hover {
   
  color: white !important;
 }
+
+.invalid
+{
+  border-color: #B22222;
+}
+.invalid-text
+{
+  color: #B22222;
+  font-size: small;
+}
 .footer-links:hover
 {
   border:none !important;

@@ -7,13 +7,22 @@ import herooimage from "../../../assets/Table.png";
 import websitecard from "../../../assets/websitecard.png";
 import { useNavigate } from "react-router-dom";
 import Carousel from "./Carousel";
+import { useSelector, useDispatch } from 'react-redux';
+import { setUser } from '../../redux/app/appSlice';
 
 function LandingPage() {
   const router = useNavigate();
 
+  const {user} = useSelector((state:any) => state.app);
+  const dispatch = useDispatch();
   const handleSignup = () => {
-    router("/signup");
+    // router("/signup");
+    
+    dispatch(setUser(true))
+     console.log(user)
   };
+
+ 
   return (
     <div>
       <Navbar />

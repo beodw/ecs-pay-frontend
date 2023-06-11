@@ -18,7 +18,7 @@ const appSlice = createSlice({
       state.config = action.payload;
     },
     setUser: (state, action) => {
-      state.user = action.payload;
+      state.user = action;
     },
   },
 });
