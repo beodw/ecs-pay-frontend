@@ -1,8 +1,7 @@
-
 import { useFormik } from "formik";
 import { form1ValidationSchema } from "./validationschema";
-import 'react-phone-input-2/lib/style.css';
-import PhoneInput from 'react-phone-input-2';
+import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
 
 interface ChildProps {
   onChildEvent: () => void;
@@ -10,28 +9,28 @@ interface ChildProps {
 
 
 function Form1({ onChildEvent }: ChildProps) {
-
   const handleNext = () => {
-  
-       onChildEvent();
-    
+    onChildEvent();
   };
 
-  const { errors, touched, values, handleChange, handleBlur, handleSubmit } = useFormik({
-    initialValues: {
-      email: "",
-      userName: "",
-      lastName: "",
-      firstName: "",
-      countryCode: "",
-      phoneNumber: "",
-    },
-    onSubmit: handleNext,
-    validationSchema: form1ValidationSchema,
-  });
+  const { errors, touched, values, handleChange, setFieldValue, handleBlur, handleSubmit } =
+    useFormik({
+      initialValues: {
+        email: "",
+        userName: "",
+        lastName: "",
+        firstName: "",
+        countryCode: "",
+        phoneNumber: "",
+      },
+      onSubmit: handleNext,
+      validationSchema: form1ValidationSchema,
+    });
 
   return (
     <div>
+
+      
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div
           className="mb-4 flex justify-between gap-3"
@@ -43,7 +42,11 @@ function Form1({ onChildEvent }: ChildProps) {
           }}
         >
           <input
-            className= {errors.firstName && touched.firstName ? 'invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline ' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
+            className={
+              errors.firstName && touched.firstName
+                ? "invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline "
+                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+            }
             id="firstName"
             type="text"
             placeholder="First Name"
@@ -52,7 +55,11 @@ function Form1({ onChildEvent }: ChildProps) {
             onBlur={handleBlur}
           />
           <input
-            className= {errors.lastName && touched.lastName ? 'invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline ' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
+            className={
+              errors.lastName && touched.lastName
+                ? "invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline "
+                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+            }
             id="lastName"
             type="text"
             placeholder="Last Name"
@@ -63,23 +70,25 @@ function Form1({ onChildEvent }: ChildProps) {
         </div>
 
         <div className=" flex justify-between">
-        {
-            errors.firstName && touched.firstName &&
+          {errors.firstName && touched.firstName && (
             <div className="mb-4 ml-10 invalid-text w-[fit-content]">
               {errors.firstName}
             </div>
-        }
-        {
-            errors.lastName && touched.lastName &&
+          )}
+          {errors.lastName && touched.lastName && (
             <div className="mb-4 mr-12 invalid-text w-[fit-content]">
               {errors.lastName}
             </div>
-        }
+          )}
         </div>
-        
+
         <div className="mb-4">
           <input
-            className= {errors.userName && touched.userName ? 'invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
+            className={
+              errors.userName && touched.userName
+                ? "invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+            }
             id="userName"
             type="text"
             placeholder="Username"
@@ -87,31 +96,34 @@ function Form1({ onChildEvent }: ChildProps) {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {
-            errors.userName && touched.userName &&
+          {errors.userName && touched.userName && (
             <div className="mt-4 ml-10 invalid-text w-[fit-content]">
               {errors.userName}
             </div>
-         }
+          )}
         </div>
 
         <div className="mb-4">
           <input
-            className= {errors.email && touched.email ?'invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
+            className={
+              errors.email && touched.email
+                ? "invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+            }
             id="email"
             type="text"
             placeholder="Email Address"
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
+            
           />
 
-{
-            errors.email && touched.email &&
+          {errors.email && touched.email && (
             <div className="mt-4 ml-10 invalid-text w-[fit-content]">
               {errors.email}
             </div>
-         }
+          )}
         </div>
 
         <div
@@ -123,45 +135,57 @@ function Form1({ onChildEvent }: ChildProps) {
           }}
         >
           <PhoneInput
-        country={'us'} // Default country
-        value={values.countryCode}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        inputStyle={{
-          border:'none',
-          width:'100%',
-        }}
-        buttonStyle={{
-          backgroundColor: 'transparent',
-          border: 'none'
-        }}
-        containerClass= {errors.countryCode && touched.countryCode ?'invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
-      />
-          <input
+            country={"ng"} // Default country
+            value={values.countryCode}
+            inputProps={{
+              id:'countryCode',
+              maxLength: 4,
+
+            }}
             
+            onChange={(value)=>setFieldValue('countryCode', value)}
+            
+            inputStyle={{
+              border: "none",
+              width: "100%",
+            }}
+            buttonStyle={{
+              backgroundColor: "transparent",
+              border: "none",
+            }}
+            containerClass={
+              errors.countryCode && touched.countryCode
+                ? "invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+            }
+          />
+          <input
             id="phoneNumber"
-            type="text"
+            type="number"
             value={values.phoneNumber}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder={values.countryCode ? values.countryCode : 'Phone Number'}
-            className= {errors.phoneNumber && touched.phoneNumber ?'invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
-
+            placeholder={
+              values.countryCode ? values.countryCode : "Phone Number"
+            }
+            className={
+              errors.phoneNumber && touched.phoneNumber
+                ? "invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+            }
           />
         </div>
         <div className=" flex justify-between">
-        {
-            errors.countryCode && touched.countryCode &&
+          {errors.countryCode && touched.countryCode && (
             <div className="mb-4 ml-10 invalid-text w-[fit-content]">
               {errors.countryCode}
             </div>
-        }
-        {
-            errors.phoneNumber && touched.phoneNumber &&
+          )}
+          {errors.phoneNumber && touched.phoneNumber && (
             <div className="mb-4 mr-16 invalid-text w-[fit-content]">
               {errors.phoneNumber}
             </div>
-        }
+          )}
         </div>
         <div className="flex items-center justify-center mb-4">
           <button className="base-btn" type="submit">
