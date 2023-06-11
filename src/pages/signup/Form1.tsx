@@ -1,6 +1,8 @@
 
 import { useFormik } from "formik";
 import { form1ValidationSchema } from "./validationschema";
+import 'react-phone-input-2/lib/style.css';
+import PhoneInput from 'react-phone-input-2';
 
 interface ChildProps {
   onChildEvent: () => void;
@@ -120,23 +122,31 @@ function Form1({ onChildEvent }: ChildProps) {
             maxWidth: "484px",
           }}
         >
+          <PhoneInput
+        country={'us'} // Default country
+        value={values.countryCode}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        inputStyle={{
+          border:'none',
+          width:'100%',
+        }}
+        buttonStyle={{
+          backgroundColor: 'transparent',
+          border: 'none'
+        }}
+        containerClass= {errors.countryCode && touched.countryCode ?'invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
+      />
           <input
-            className= {errors.countryCode && touched.countryCode ?'invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
-            id="countryCode"
-            type="text"
-            value={values.countryCode}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            placeholder="Country Code"
-          />
-          <input
-            className= {errors.phoneNumber && touched.phoneNumber ?'invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
+            
             id="phoneNumber"
             type="text"
             value={values.phoneNumber}
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder={values.countryCode ? values.countryCode : 'Phone Number'}
+            className= {errors.phoneNumber && touched.phoneNumber ?'invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
+
           />
         </div>
         <div className=" flex justify-between">
@@ -148,7 +158,7 @@ function Form1({ onChildEvent }: ChildProps) {
         }
         {
             errors.phoneNumber && touched.phoneNumber &&
-            <div className="mb-4 mr-12 invalid-text w-[fit-content]">
+            <div className="mb-4 mr-16 invalid-text w-[fit-content]">
               {errors.phoneNumber}
             </div>
         }
