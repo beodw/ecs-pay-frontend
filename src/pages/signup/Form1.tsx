@@ -166,8 +166,8 @@ function Form1({ onChildEvent }: ChildProps) {
             }}
             containerClass={
               errors.countryCode && touched.countryCode
-                ? "invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                : "appearance-none border border-gray-400 border-solid border-1 rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                ? "invalid appearance-none h-[48px] border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none border border-gray-400 h-[48px] border-solid border-1 rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
             }
           />
 
@@ -188,7 +188,7 @@ function Form1({ onChildEvent }: ChildProps) {
             className={
               errors.phoneNumber && touched.phoneNumber
                 ? "invalid w-[256px] appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                : "appearance-none w-[256px] border rounded-full md:w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none w-[256px] mt-4 md:mt-0 border rounded-full md:w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
             }
           />
 
