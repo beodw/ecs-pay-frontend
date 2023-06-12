@@ -33,7 +33,7 @@ function Form1({ onChildEvent }: ChildProps) {
       
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div
-          className="mb-4 flex justify-between gap-3"
+          className="mb-4 md:flex justify-between gap-3"
           style={{
             marginTop: "37px",
             marginLeft: "auto",
@@ -44,8 +44,8 @@ function Form1({ onChildEvent }: ChildProps) {
           <input
             className={
               errors.firstName && touched.firstName
-                ? "invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline "
-                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                ? "invalid mb-4 md:mb-0 appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline "
+                : "appearance-none mb-5 md:mb-0 border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
             }
             id="firstName"
             type="text"
@@ -54,6 +54,11 @@ function Form1({ onChildEvent }: ChildProps) {
             onChange={handleChange}
             onBlur={handleBlur}
           />
+          {errors.firstName && touched.firstName && (
+            <div className="mb-4 mx-auto md:hidden invalid-text w-[fit-content]">
+              {errors.firstName}
+            </div>
+          )}
           <input
             className={
               errors.lastName && touched.lastName
@@ -67,16 +72,22 @@ function Form1({ onChildEvent }: ChildProps) {
             onChange={handleChange}
             onBlur={handleBlur}
           />
+
+{errors.lastName && touched.lastName && (
+            <div className="mt-4 md:hidden mx-auto invalid-text w-[fit-content]">
+              {errors.lastName}
+            </div>
+          )}
         </div>
 
-        <div className=" flex justify-between">
+        <div className=" hidden md:flex justify-between">
           {errors.firstName && touched.firstName && (
-            <div className="mb-4 ml-10 invalid-text w-[fit-content]">
+            <div className="mb-4 mx-10 invalid-text w-[fit-content]">
               {errors.firstName}
             </div>
           )}
           {errors.lastName && touched.lastName && (
-            <div className="mb-4 mr-12 invalid-text w-[fit-content]">
+            <div className="mb-4 mx-11  invalid-text w-[fit-content]">
               {errors.lastName}
             </div>
           )}
@@ -97,7 +108,7 @@ function Form1({ onChildEvent }: ChildProps) {
             onBlur={handleBlur}
           />
           {errors.userName && touched.userName && (
-            <div className="mt-4 ml-10 invalid-text w-[fit-content]">
+            <div className="mt-4 mx-auto text-center md:ml-10 invalid-text md:w-[fit-content]">
               {errors.userName}
             </div>
           )}
@@ -120,14 +131,14 @@ function Form1({ onChildEvent }: ChildProps) {
           />
 
           {errors.email && touched.email && (
-            <div className="mt-4 ml-10 invalid-text w-[fit-content]">
+            <div className="mt-4 mx-auto text-center md:ml-10 invalid-text md:w-[fit-content]">
               {errors.email}
             </div>
           )}
         </div>
 
         <div
-          className="mb-3 flex justify-between gap-3"
+          className="mb-3 md:flex justify-between gap-3"
           style={{
             marginLeft: "auto",
             marginRight: "auto",
@@ -156,9 +167,15 @@ function Form1({ onChildEvent }: ChildProps) {
             containerClass={
               errors.countryCode && touched.countryCode
                 ? "invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none border border-gray-400 border-solid border-1 rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
             }
           />
+
+{errors.countryCode && touched.countryCode && (
+            <div className="my-4 mx-auto md:hidden invalid-text w-[fit-content]">
+              {errors.countryCode}
+            </div>
+          )}
           <input
             id="phoneNumber"
             type="number"
@@ -170,19 +187,27 @@ function Form1({ onChildEvent }: ChildProps) {
             }
             className={
               errors.phoneNumber && touched.phoneNumber
-                ? "invalid appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
-                : "appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                ? "invalid w-[256px] appearance-none border rounded-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                : "appearance-none w-[256px] border rounded-full md:w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
             }
           />
+
+{errors.phoneNumber && touched.phoneNumber && (
+            <div className="my-4 mx-auto md:hidden invalid-text w-[fit-content]">
+              {errors.phoneNumber}
+            </div>
+          )}
         </div>
-        <div className=" flex justify-between">
+
+        
+        <div className=" hidden md:flex justify-between">
           {errors.countryCode && touched.countryCode && (
-            <div className="mb-4 ml-10 invalid-text w-[fit-content]">
+            <div className="mb-4 md:ml-10 mx-auto text-center md:ml-10 invalid-text md:w-[fit-content]">
               {errors.countryCode}
             </div>
           )}
           {errors.phoneNumber && touched.phoneNumber && (
-            <div className="mb-4 mr-16 invalid-text w-[fit-content]">
+            <div className="mb-4 mx-auto text-center md:ml-10 md:mr-16 invalid-text md:w-[fit-content]">
               {errors.phoneNumber}
             </div>
           )}
