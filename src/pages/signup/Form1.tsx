@@ -7,30 +7,34 @@ interface ChildProps {
   onChildEvent: () => void;
 }
 
-
 function Form1({ onChildEvent }: ChildProps) {
   const handleNext = () => {
     onChildEvent();
   };
 
-  const { errors, touched, values, handleChange, setFieldValue, handleBlur, handleSubmit } =
-    useFormik({
-      initialValues: {
-        email: "",
-        userName: "",
-        lastName: "",
-        firstName: "",
-        countryCode: "",
-        phoneNumber: "",
-      },
-      onSubmit: handleNext,
-      validationSchema: form1ValidationSchema,
-    });
+  const {
+    errors,
+    touched,
+    values,
+    handleChange,
+    setFieldValue,
+    handleBlur,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      email: "",
+      userName: "",
+      lastName: "",
+      firstName: "",
+      countryCode: "",
+      phoneNumber: "",
+    },
+    onSubmit: handleNext,
+    validationSchema: form1ValidationSchema,
+  });
 
   return (
     <div>
-
-      
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div
           className="mb-4 md:flex justify-between gap-3"
@@ -73,7 +77,7 @@ function Form1({ onChildEvent }: ChildProps) {
             onBlur={handleBlur}
           />
 
-{errors.lastName && touched.lastName && (
+          {errors.lastName && touched.lastName && (
             <div className="mt-4 md:hidden mx-auto invalid-text w-[fit-content]">
               {errors.lastName}
             </div>
@@ -127,7 +131,6 @@ function Form1({ onChildEvent }: ChildProps) {
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            
           />
 
           {errors.email && touched.email && (
@@ -149,13 +152,10 @@ function Form1({ onChildEvent }: ChildProps) {
             country={"ng"} // Default country
             value={values.countryCode}
             inputProps={{
-              id:'countryCode',
+              id: "countryCode",
               maxLength: 4,
-
             }}
-            
-            onChange={(value)=>setFieldValue('countryCode', value)}
-            
+            onChange={(value) => setFieldValue("countryCode", value)}
             inputStyle={{
               border: "none",
               width: "100%",
@@ -171,7 +171,7 @@ function Form1({ onChildEvent }: ChildProps) {
             }
           />
 
-{errors.countryCode && touched.countryCode && (
+          {errors.countryCode && touched.countryCode && (
             <div className="my-4 mx-auto md:hidden invalid-text w-[fit-content]">
               {errors.countryCode}
             </div>
@@ -192,17 +192,16 @@ function Form1({ onChildEvent }: ChildProps) {
             }
           />
 
-{errors.phoneNumber && touched.phoneNumber && (
+          {errors.phoneNumber && touched.phoneNumber && (
             <div className="my-4 mx-auto md:hidden invalid-text w-[fit-content]">
               {errors.phoneNumber}
             </div>
           )}
         </div>
 
-        
         <div className=" hidden md:flex justify-between">
           {errors.countryCode && touched.countryCode && (
-            <div className="mb-4 md:ml-10 mx-auto text-center md:ml-10 invalid-text md:w-[fit-content]">
+            <div className="mb-4 md:ml-10 mx-auto text-center invalid-text md:w-[fit-content]">
               {errors.countryCode}
             </div>
           )}
