@@ -201,12 +201,12 @@ function Form1({ onChildEvent }: ChildProps) {
 
         <div className=" hidden md:flex justify-between">
           {errors.countryCode && touched.countryCode && (
-            <div className="mb-4 md:ml-10 mx-auto text-center invalid-text md:w-[fit-content]">
+            <div className="mb-4 mx-10 invalid-text w-[fit-content]">
               {errors.countryCode}
             </div>
           )}
           {errors.phoneNumber && touched.phoneNumber && (
-            <div className="mb-4 mx-auto text-center md:ml-10 md:mr-16 invalid-text md:w-[fit-content]">
+            <div className="mb-4 mx-11 invalid-text w-[fit-content]">
               {errors.phoneNumber}
             </div>
           )}
