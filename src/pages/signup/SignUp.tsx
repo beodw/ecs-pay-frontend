@@ -86,9 +86,31 @@ function SignUp() {
             <div className="mb-4 pt-[4px] inactivestep md:hidden text-center justify-center">
               {activeStep}
             </div>
-
+            <div
+              style={{
+                fontSize: "14px",
+                fontWeight: 400,
+                marginLeft: "auto",
+                marginRight: "auto",
+                maxWidth: "484px",
+              }}
+            >
+              Create your account
+            </div>
+            <div
+              style={{
+                marginTop: "12px",
+                fontWeight: 500,
+                fontSize: "24px",
+                marginLeft: "auto",
+                marginRight: "auto",
+                maxWidth: "484px",
+              }}
+            >
+              Send and Receive Money Internationally from Africa with ECS Pay
+            </div>
             {/* Stepper for medium screens  */}
-            <div className="hidden justify-center mb-8 md:flex">
+            <div className=" mt-[70px] hidden justify-center mb-8 md:flex">
               <div className={activeStep > 1 ? "activestep" : "inactivestep"}>
                 {notchecked1 && (
                   <img
@@ -136,31 +158,43 @@ function SignUp() {
               </div>
             </div>
 
-            {/* Render Forms */}
+            <div className=" hidden md:flex justify-between text-center">
+             <div className="ml-10">
+              STEP 1
+             </div>
 
-            <div
-              style={{
-                fontSize: "14px",
-                fontWeight: 400,
-                marginLeft: "auto",
-                marginRight: "auto",
-                maxWidth: "484px",
-              }}
-            >
-              Create your account
+             <div className="ml-10">
+              STEP 2
+             </div>
+
+             <div className="ml-10">
+              STEP 3
+             </div>
+
+             <div className="mr-5">
+             FINAL STEP
+             </div>
             </div>
-            <div
-              style={{
-                marginTop: "12px",
-                fontWeight: 500,
-                fontSize: "24px",
-                marginLeft: "auto",
-                marginRight: "auto",
-                maxWidth: "484px",
-              }}
-            >
-              Send and Receive Money Internationally from Africa with ECS Pay
+
+            <div className=" gap-3 my-[4px] hidden md:flex justify-between">
+             <div>
+             Personal Details
+             </div>
+
+             <div>
+             Address Info
+             </div>
+
+             <div>
+             Security Info
+             </div>
+
+             <div>
+             Authentication
+             </div>
             </div>
+
+            {/* Render Forms */}
             {components[activeComponent]}
 
             <main></main>

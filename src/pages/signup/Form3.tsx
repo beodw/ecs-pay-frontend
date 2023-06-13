@@ -1,3 +1,5 @@
+import { useFormik } from "formik";
+import { form3ValidationSchema } from "./validationschema";
 
 interface ChildProps {
     onChildEvent: () => void;
@@ -9,31 +11,64 @@ function Form3({ onChildEvent }: ChildProps) {
     onChildEvent();
   };
 
+  const {
+    errors,
+    touched,
+    values,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      password: "",
+      password_confirmaion: "",
+      checkbox: false,
+    },
+    onSubmit: handleNext,
+    validationSchema: form3ValidationSchema,
+  });
+
   return (
     <div>
-      <form>
+      <form autoComplete="off" onSubmit={handleSubmit}>
 
         
         <div className="mt-4 mb-4">
           <input
-            className=" appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+            className= {errors.password && touched.password ? 'invalid appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline'}
             id="password"
             type="password"
             placeholder="Password"
-          />
+           value={values.password}
+           onChange={handleChange}
+           onBlur={handleBlur}></input>
         </div>
+        
+        {errors.password && touched.password && (
+            <div className="mb-4 mx-auto md:ml-10 invalid-text w-[fit-content]">
+              {errors.password}
+            </div>
+          )}
 
         <div className="mb-4">
           <input
-            className=" appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
+            className={errors.password_confirmaion && touched.password_confirmaion ? 'invalid appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' : 'appearance-none border rounded-full w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'}
+            id="password_confirmaion"
             type="password"
             placeholder="Confirm Password"
+            value={values.password_confirmaion}
+            onChange={handleChange}
+            onBlur={handleBlur}
           />
         </div>
+        {errors.password_confirmaion && touched.password_confirmaion && (
+            <div className="mb-4 mx-auto md:ml-10 invalid-text w-[fit-content]">
+              {errors.password_confirmaion}
+            </div>
+          )}
 
         <div className="flex items-center justify-center mb-4">
-          <button className="base-btn" type="button" onClick={handleNext}>
+          <button className="base-btn" type="submit">
             Sign Up
           </button>
         </div>
@@ -46,7 +81,11 @@ function Form3({ onChildEvent }: ChildProps) {
             maxWidth: "484px",
           }}
         >
-          <input id="myCheckbox" type="checkbox" className="h-5 w-5 rounded" />
+          <input id="checkbox" type="checkbox" className="h-5 w-5 rounded"
+          checked={values.checkbox}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          />
           <label
             htmlFor="myCheckbox"
             className="ml-2"
@@ -56,6 +95,12 @@ function Form3({ onChildEvent }: ChildProps) {
             the terms and conditions of ECS Pay
           </label>
         </div>
+
+        {errors.checkbox && touched.checkbox && (
+            <div className="mb-4 mx-auto md:ml-10 invalid-text w-[fit-content]">
+              {errors.checkbox}
+            </div>
+          )}
 
         <div
           className="text-center"

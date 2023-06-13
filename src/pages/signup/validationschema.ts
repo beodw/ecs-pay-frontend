@@ -7,14 +7,24 @@ export const form1ValidationSchema = yup.object().shape({
     countryCode: yup.string().required('Country Code is Required'),
     phoneNumber: yup.string().required('Phone Number is Required'),
     email: yup.string().email('Invalid email').required('Email is required'),
-    // password: yup
-    //   .string()
-    //   .required('Password is required')
-    //   .min(8, 'Password must be at least 8 characters long')
-    //   .matches(
-    //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
-    //     'Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character'
-    //   ),
+  });
+
+  export const form2ValidationSchema = yup.object().shape({
+    country: yup.string().required('Country is Required'),
+    town_city: yup.string().required('City is Required'),
+  });
+
+  export const form3ValidationSchema = yup.object().shape({
+    password: yup
+      .string()
+      .required('Password is required')
+      .min(8, 'Password must be at least 8 characters long')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
+        'Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character'
+      ),
+    password_confirmaion: yup.string().required('Confirm Password is Required').oneOf([yup.ref('password')], 'Passwords must match'),
+    checkbox: yup.boolean().oneOf([true], 'Accept the terms and conditions of ECS Pay'),
   });
   
   
