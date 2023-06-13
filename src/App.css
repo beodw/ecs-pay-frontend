@@ -60,7 +60,7 @@ a:hover {
   font-size: 16px;
 }
 .createactdiv {
-  width: 31rem;
+  max-width: 484px;
   margin-top: 10px;
 }
 .footer-title
@@ -173,6 +173,7 @@ textarea
   width: 100px;
   background-color: #9a9ba0;
 }
+
 
 .activestep, .activestep1, .activestep2, .activestep3{
   background-color: #fbcc05;

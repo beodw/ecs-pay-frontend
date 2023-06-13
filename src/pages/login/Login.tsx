@@ -6,15 +6,24 @@ function Login() {
   const handleSignup = () => {
     router("/signup");
   };
+
+  const homePage =() => 
+  {
+    router('/')
+  }
   return <div>
   <div className="grid md:grid-cols-4">
     <div className="col-span-3">
       <div className="logoBar flex justify-between">
+        
         <img
           src="../../../assets/Mask group.png"
           alt="Your Image"
+          style={{cursor: 'pointer'}}
+          onClick={homePage}
           className="object-contain logo lg:ml-40"
         />
+        
 
         <div className="logincontainer flex">
           <div className="alreadyregistered sm:d-none ">

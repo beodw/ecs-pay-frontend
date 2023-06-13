@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import checkedimg from "../../../assets/checked.png";
 import notcheckedimg from "../../../assets/notchecked.png";
 import { Form1, Form2, Form3, Form4 } from ".";
@@ -23,6 +23,10 @@ function SignUp() {
   const [checked4, setCheck4] = useState(false);
   const [notchecked4, setNotCheck4] = useState(true);
 
+  const homePage =() => 
+  {
+    router('/')
+  }
   const handleNext = () => {
     setActiveStep((prevStep) => prevStep + 1);
     setComponent((prevStep) => prevStep + 1);
@@ -61,11 +65,15 @@ function SignUp() {
       <div className="grid md:grid-cols-4">
         <div className="col-span-3">
           <div className="logoBar flex justify-between">
-            <img
+           
+           <img
               src="../../../assets/Mask group.png"
               alt="Your Image"
+              style={{cursor: 'pointer'}}
+              onClick={homePage}
               className="max-w-full h-auto logo lg:ml-40"
             />
+            
 
             <div className="logincontainer flex">
               <div className="alreadyregistered sm:d-none ">
@@ -110,7 +118,7 @@ function SignUp() {
               Send and Receive Money Internationally from Africa with ECS Pay
             </div>
             {/* Stepper for medium screens  */}
-            <div className=" mt-[70px] hidden justify-center mb-8 md:flex">
+            <div className=" mt-[60px] hidden justify-center mb-8 md:flex">
               <div className={activeStep > 1 ? "activestep" : "inactivestep"}>
                 {notchecked1 && (
                   <img
